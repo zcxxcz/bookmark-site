@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人导航站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .description {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        .category-title {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .category-title:hover {
+            background-color: #2980b9;
+        }
+        .category-title::after {
+            content: "▼";
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+        .category-title.collapsed::after {
+            transform: rotate(-90deg);
+        }
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .link-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #3498db;
+        }
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left-color: #e74c3c;
+        }
+        .link-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        .link-url {
+            color: #7f8c8d;
+            font-size: 14px;
+            word-break: break-all;
+        }
+        .link-desc {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>个人导航站</h1>
+            <p class="description">常用网站一站式访问</p>
+        </header>
+
+        <div class="category">
+            <div class="category-title">信息学竞赛</div>
+            <div class="links">
+                <div class="link-item">
+                    <div class="link-title">CCF NOI Pre 2024</div>
+                    <div class="link-url">https://ccf.org.cn/NOIPre2024</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">北京市中小学信息学能力测评活动</div>
+                    <div class="link-url">https://bcsp-x.hdast.org.cn/index</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">信息学奥赛-NOIP-有道小图灵</div>
+                    <div class="link-url">https://oj.youdao.com/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">C++在线评测系统</div>
+                    <div class="link-url">https://www.duxue.pro/home</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">人工智能创新人才早期培养科学院</div>
+                    <div class="link-url">https://ai.hdjky.org.cn/#/HomePageView</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">北京八中超常教育实验项目</div>
+                    <div class="link-url">https://www.bjno8ms.cn/#/index/index</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">2024年人大附中早培项目报名系统</div>
+                    <div class="link-url">https://www.eeo.cn/act/eyutzc/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">蓝桥杯青少组</div>
+                    <div class="link-url">https://www.lanqiaoqingshao.cn/home</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">NOI报名网站</div>
+                    <div class="link-url">https://cspsjtest.noi.cn/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">101中学-人工智能大模型科技英才研训营</div>
+                    <div class="link-url">https://www.wizsci.com/project/detail/1682</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">中小学信息学指南</div>
+                    <div class="link-url">http://noip.zhoufeng.net/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">USACO</div>
+                    <div class="link-url">https://usaco.org/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">OIerDb NG</div>
+                    <div class="link-url">https://oier.baoshuo.dev/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">OI Wiki</div>
+                    <div class="link-url">https://oi-wiki.org/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">洛谷 | 计算机科学教育新生态</div>
+                    <div class="link-url">https://www.luogu.com.cn/</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">AI</div>
+            <div class="links">
+                <div class="link-item">
+                    <div class="link-title">通义千问</div>
+                    <div class="link-url">https://tongyi.aliyun.com/efficiency/folders/0</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Synthesis Tutor</div>
+                    <div class="link-url">https://www.synthesis.com/tutor?&</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">ImageFX</div>
+                    <div class="link-url">https://labs.google/fx/zh/tools/image-fx</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">个人AI生存/协作探索指南</div>
+                    <div class="link-url">https://gamma.app/docs/AI--z5kkj53jkqgpdmw?mode=doc</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">豆包 - 字节跳动旗下 AI 智能助手</div>
+                    <div class="link-url">https://www.doubao.com/chat/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">ig.ft.com</div>
+                    <div class="link-url">https://ig.ft.com/generative-ai/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">ChatGPT镜像站点</div>
+                    <div class="link-url">https://github.com/xx025/carrot</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">AI工具集导航</div>
+                    <div class="link-url">https://ai-bot.cn/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Perplexity AI</div>
+                    <div class="link-url">https://www.perplexity.ai/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">chatpan</div>
+                    <div class="link-url">https://chatpan.ai/account</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">NexusGPT</div>
+                    <div class="link-url">https://nexus.snikpic.io/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Redense AI</div>
+                    <div class="link-url">https://app.redenseai.com/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">中国区注册OpenAI账号试用ChatGPT指南</div>
+                    <div class="link-url">https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">PPT生成</div>
+                    <div class="link-url">https://www.mindshow.fun/#/edit/195972</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">The Illustrated Stable Diffusion</div>
+                    <div class="link-url">https://jalammar.github.io/illustrated-stable-diffusion/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">生成式人工智能的第一幕：推理时代开始</div>
+                    <div class="link-url">https://www.sequoiacap.com/article/generative-ais-act-o1/</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">海外建站</div>
+            <div class="links">
+                <div class="link-item">
+                    <div class="link-title">Search listening tool for market research</div>
+                    <div class="link-url">https://answerthepublic.com/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Vercel Dashboard</div>
+                    <div class="link-url">https://vercel.com/dashboard</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Railway Dashboard</div>
+                    <div class="link-url">https://railway.app/dashboard</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">What Is My IP Address</div>
+                    <div class="link-url">https://whatismyipaddress.com/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">IPinfo.io</div>
+                    <div class="link-url">https://ipinfo.io/account/home</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">v2rayN使用教程</div>
+                    <div class="link-url">https://v2rayn.org/</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">职业生涯</div>
+            <div class="links">
+                <div class="link-item">
+                    <div class="link-title">当你找不着北时（恋恋笔记本）影评</div>
+                    <div class="link-url">https://movie.douban.com/review/1549231/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">新生</div>
+                    <div class="link-url">https://b.xinshengdaxue.com/index.html</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Stanford Online</div>
+                    <div class="link-url">http://online.stanford.edu/courses</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">覃超帝国兴亡史 - 知乎专栏</div>
+                    <div class="link-url">http://zhuanlan.zhihu.com/qinchao</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">投资</div>
+            <div class="links">
+                <div class="link-item">
+                    <div class="link-title">量化小讲堂 - Python、Pandas系列</div>
+                    <div class="link-url">http://bbs.pinggu.org/thread-3950124-1-1.html</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">创业</div>
+            <div class="links">
+                <div class="link-item">
+                    <div class="link-title">Startup School</div>
+                    <div class="link-url">https://www.startupschool.org/</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Everything about a startup - 知乎专栏</div>
+                    <div class="link-url">http://zhuanlan.zhihu.com/startup</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Featured Essays at andrewchen</div>
+                    <div class="link-url">https://andrewchen.co/list-of-essays/</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">LEGO</div>
+            <div class="links">
+                <div class="link-item">
+                    <div class="link-title">EV3 中文乐高</div>
+                    <div class="link-url">http://bbs.cmnxt.com/forum-132-1.html</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">BrickLink Reference Catalog</div>
+                    <div class="link-url">http://www.bricklink.com/catalogItemInv.asp?S=45544-1</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Education EV3 Core Set</div>
+                    <div class="link-url">http://brickset.com/sets/45544-1</div>
+                </div>
+                <div class="link-item">
+                    <div class="link-title">Rebrickable</div>
+                    <div class="link-url">http://rebrickable.com/</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 个人导航站 | 最后更新: 2025年3月27日</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTitles = document.querySelectorAll('.category-title');
+            
+            categoryTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    this.classList.toggle('collapsed');
+                    const links = this.nextElementSibling;
+                    if (this.classList.contains('collapsed')) {
+                        links.style.display = 'none';
+                    } else {
+                        links.style.display = 'grid';
+                    }
+                });
+            });
+            
+            // 默认展开第一个分类
+            if (categoryTitles.length > 0) {
+                categoryTitles[0].click();
+            }
+        });
+    </script>
+</body>
+</html>
